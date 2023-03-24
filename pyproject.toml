@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "merge-rules"
+version = "0.0.1"
+description = "Semgrep merge rules"
+authors = ["Ike Murami <murami.ike@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.0"
+PyYAML = "^6.0"
+pydantic = "^1.10.7"
+asyncio = "^3.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
