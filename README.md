@@ -33,4 +33,5 @@ preset:
   - url: https://raw.githubusercontent.com/returntocorp/semgrep-rules/develop/generic/secrets/security/detected-artifactory-token.yaml
     ids:
       - detected-artifactory-token
+  - path: /Users/ikemurami/Work/Tools/appsec/semgrep-rules/contrib/csharp/best-practices/viewstatecrypt.yaml
 ```
