@@ -10,14 +10,14 @@ import yaml
 class Rule(pydantic.BaseModel):
     url: typing.Optional[str]
     path: typing.Optional[str]
-    ids: typing.List[str]
+    ids: typing.Optional[typing.List[str]]
 
     @staticmethod
     async def _extract_semgrep_rules(rule_ids: typing.List[str], inp_stream) -> typing.List:
         yaml_obj = yaml.safe_load_all(inp_stream)
         
         rules = itertools.filterfalse(
-            lambda item: item['id'] in rule_ids,
+            lambda item: rule_ids and item['id'] not in rule_ids,
             itertools.chain.from_iterable(
                 map(
                     lambda item: item['rules'], 
